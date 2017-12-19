@@ -3,16 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <script>
-var word = "giraffe";
+var input = "GIRAFFE";
+var word = input.toLowerCase();
 var first = word.slice(0, 1);
 function capitalize(){
 return first.toUpperCase() + word.slice(1);
+}
+
+function lastLetter(){
+  return word.charAt(word.length - 1)
 }
 </script>
 </head>
 
 <body>
-  <p id="demo"></p>
+
 </body>
 
 </html>
