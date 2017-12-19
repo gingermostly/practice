@@ -2,34 +2,39 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script>
-
-document.getElementById('add7').addEventListener('click', add7);
-function add7(x){
-parseInt('x', 10);
-return x + 7;
-}
-
-function multiply(x, y){
-  return x * y;
-}
-var str = "GIRAFFE";
-function capitalize(str){
-return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
-}
-
-function lastLetter(str){
-  return str.charAt(str.length - 1).toLowerCase();
-}
-console.log(lastLetter(str))
-console.log(add7(5))
-console.log(multiply(5, 2))
-</script>
 </head>
 <body>
   <form><input type="number"></form>
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
+  <script>
+  document.getElementById('add7').addEventListener('click', function(){
+    add7();
+  });
+
+  function add7(x){
+  parseInt('x', 10);
+  return x + 7;
+  }
+
+  var plus7 = add7(x);
+  document.getElementById('answer').textContent = "The answer is " + plus7;
+
+  function multiply(x, y){
+    return x * y;
+  }
+  var str = "GIRAFFE";
+  function capitalize(str){
+  return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
+  }
+
+  function lastLetter(str){
+    return str.charAt(str.length - 1).toLowerCase();
+  }
+  console.log(lastLetter(str))
+  console.log(add7(5))
+  console.log(multiply(5, 2))
+  </script>
 </body>
 
 </html>
