@@ -8,18 +8,13 @@
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
   <script>
+
   document.getElementById('add7').addEventListener('click', function(){
-    var plus7 = add7(input.value);
-    document.getElementById('answer').textContent = "The answer is " + plus7;
+    function add7(x){
+      var x = parseInt(x, 10);
+      return x + 7;
+      }
   });
-
-  function add7(x){
-  parseInt('x', 10);
-  return x + 7;
-  }
-
-  var plus7 = add7(input.value);
-  document.getElementById('answer').textContent = "The answer is " + plus7;
 
   function multiply(x, y){
     return x * y;
@@ -32,9 +27,7 @@
   function lastLetter(str){
     return str.charAt(str.length - 1).toLowerCase();
   }
-  console.log(lastLetter(str))
-  console.log(add7(5))
-  console.log(multiply(5, 2))
+
   </script>
 </body>
 
