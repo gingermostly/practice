@@ -8,14 +8,16 @@
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
   <script>
-
+  function add7(x){
+    var x = parseInt(x, 10);
+    return x + 7;
   document.getElementById('add7').addEventListener('click', function(){
-    function add7(x){
-      var x = parseInt(x, 10);
-      return x + 7;
-      }
+    add7();
+    var answer = add7(input.value);
+    console.log(answer);
+    document.getElementById('answer').textContent = 'The answer is ' + x;
   });
-
+console.log(add7(x))
   function multiply(x, y){
     return x * y;
   }
