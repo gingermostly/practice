@@ -3,21 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <script>
-var input = "GIRAFFE";
-var word = input.toLowerCase();
-var first = word.slice(0, 1);
-function capitalize(){
-return first.toUpperCase() + word.slice(1);
+
+document.getElementById('add7').addEventListener('click', add7);
+function add7(x){
+parseInt('x', 10);
+return x + 7;
 }
 
-function lastLetter(){
-  return word.charAt(word.length - 1)
+function multiply(x, y){
+  return x * y;
 }
+var str = "GIRAFFE";
+function capitalize(str){
+return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function lastLetter(str){
+  return str.charAt(str.length - 1).toLowerCase();
+}
+console.log(lastLetter(str))
+console.log(add7(5))
+console.log(multiply(5, 2))
 </script>
 </head>
-
 <body>
-
+  <form><input type="number"></form>
+  <button id="add7">ADD 7</button>
+  <div id="answer"></div>
 </body>
 
 </html>
