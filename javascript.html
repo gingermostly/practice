@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 </head>
 <body>
-  <form><input type="number"></form>
+  <form><input id="input" type="number"></form>
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
   <script>
   document.getElementById('add7').addEventListener('click', function(){
-    add7();
+    var plus7 = add7(input.value);
+    document.getElementById('answer').textContent = "The answer is " + plus7;
   });
 
   function add7(x){
@@ -17,7 +18,7 @@
   return x + 7;
   }
 
-  var plus7 = add7(x);
+  var plus7 = add7(input.value);
   document.getElementById('answer').textContent = "The answer is " + plus7;
 
   function multiply(x, y){
