@@ -4,14 +4,26 @@
 <meta charset="UTF-8">
 </head>
 <body>
-  <form><input id="add" name="select" type="radio" >Add 7 to a number<input id="multiply"name="select" type="radio" value="Multiply">Multiply 2 numbers</form>
-  <div id="add">So, what number do you want to add 7 to?</div>
+  <form><input id="add" name="select" type="radio">Add 7 to a number<input id="multiply"name="select" type="radio"> Multiply 2 numbers</form>
+  <div>So, what number do you want to add 7 to?</div>
   <form><input id="addInput" type="number"><input id="multiplyInput" type="number"></form>
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
   <script>
   var input = document.getElementById('addInput');
   var input2 = document.getElementById('multiplyInput');
+  var add = document.getElementById('add');
+  var multiply = document.getElementById('multiply');
+
+  function mathSelect(){
+    if (add.checked = true){
+        document.getElementById('multiplyInput').style.visibility = 'hidden';
+      }
+      else {
+        document.getElementById('multiplyInput').style.visibility = 'visible';
+      }
+  };
+mathSelect();
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
