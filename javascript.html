@@ -4,29 +4,19 @@
 <meta charset="UTF-8">
 </head>
 <body>
-  <form><input id="add" name="select" type="radio" value="Add 7" checked>Add 7 to a number<input id="multiply" name="select" type="radio" value="Multiply">Multiply 2 numbers</form>
-  <div id="addTitle"></div>
-  <form><input id="input" type="number"><input id="input2" type="number"></form>
+  <form><input id="add" name="select" type="radio" >Add 7 to a number<input id="multiply"name="select" type="radio" value="Multiply">Multiply 2 numbers</form>
+  <div id="add">So, what number do you want to add 7 to?</div>
+  <form><input id="addInput" type="number"><input id="multiplyInput" type="number"></form>
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
   <script>
-  var input = document.getElementById('input');
-  var input2 = document.getElementById('input2');
-  var selectOne = document.getElementById('add');
-  var selectTwo = document.getElementById('multiply');
-    if (document.getElementById('add').checked {
-      input2.style.visibility = 'hidden';
-    } else {
-      input2.style.visibility = 'visible';
-    }
+  var input = document.getElementById('addInput');
+  var input2 = document.getElementById('multiplyInput');
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
   }
-  function multiply(x, y){
-    return x * y;
-  }
-  }
+
   document.getElementById('add7').addEventListener('click', function(){
     var answer = add7(input.value);
     if (input.value.length){
@@ -35,6 +25,10 @@
       document.getElementById('answer').textContent = "You need to enter a number first."
     };
   });
+
+  function multiply(x, y){
+    return x * y;
+  }
   var str = "GIRAFFE";
   function capitalize(str){
   return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
