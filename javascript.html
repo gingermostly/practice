@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 </head>
 <body>
-  <form><input id="add" name="select" type="radio">Add 7 to a number<input id="multiply"name="select" type="radio"> Multiply 2 numbers</form>
+  <form><input id="add" name="select" type="radio" checked>Add 7 to a number<input id="multiply"name="select" type="radio"> Multiply 2 numbers</form>
   <div>So, what number do you want to add 7 to?</div>
-  <form><input id="addInput" type="number"><input id="multiplyInput" type="number"></form>
+  <form><input id="addInput" type="number"><input id="multiplyInput" type="number" style="visibility:hidden"></form>
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
   <script>
@@ -15,20 +15,18 @@
   var add = document.getElementById('add');
   var multiply = document.getElementById('multiply');
 
-  function mathSelect(){
-    if (add.checked = true){
-        document.getElementById('multiplyInput').style.visibility = 'hidden';
-      }
-      else {
-        document.getElementById('multiplyInput').style.visibility = 'visible';
-      }
-  };
-mathSelect();
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
   }
-
+document.getElementById('multiply').addEventListener('change', function(){
+  var multiplyInput - document.getElementById('multiplyInput');
+  if (multiply.checked = true) {
+    multiplyInput.style.visibility = 'visible';
+  } else {
+    multiplyInput.visibility = 'hidden';
+  };
+});
   document.getElementById('add7').addEventListener('click', function(){
     var answer = add7(input.value);
     if (input.value.length){
