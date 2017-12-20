@@ -4,18 +4,20 @@
 <meta charset="UTF-8">
 </head>
 <body>
+  <div>So, what number do you want to add 7 to?</div>
   <form><input id="input" type="number"></form>
   <button id="add7">ADD 7</button>
   <div id="answer"></div>
   <script>
+  var input = document.getElementById('input');
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
+  }
   document.getElementById('add7').addEventListener('click', function(){
-    add7();
     var answer = add7(input.value);
     console.log(answer);
-    document.getElementById('answer').textContent = 'The answer is ' + x;
+    document.getElementById('answer').textContent = 'The answer is ' + answer + '. You really couldn\'t work that out on your own?';
   });
 console.log(add7(x))
   function multiply(x, y){
@@ -29,7 +31,6 @@ console.log(add7(x))
   function lastLetter(str){
     return str.charAt(str.length - 1).toLowerCase();
   }
-
   </script>
 </body>
 
