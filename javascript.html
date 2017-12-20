@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 </head>
 <body>
-  <form><input id="add" name="select" type="radio" checked>Add 7 to a number<input id="multiply"name="select" type="radio"> Multiply 2 numbers</form>
+  <form id="mathSelect"><input id="add" name="select" type="radio" checked>Add 7 to a number<input id="multiply"name="select" type="radio"> Multiply 2 numbers</form>
   <div>So, what number do you want to add 7 to?</div>
   <form><input id="addInput" type="number"><input id="multiplyInput" type="number" style="visibility:hidden"></form>
   <button id="add7">ADD 7</button>
@@ -19,12 +19,12 @@
     var x = parseInt(x, 10);
     return x + 7;
   }
-document.getElementById('multiply').addEventListener('change', function(){
-  var multiplyInput - document.getElementById('multiplyInput');
-  if (multiply.checked = true) {
+document.getElementById('mathSelect').addEventListener('change', function(){
+  var multiplyInput = document.getElementById('multiplyInput');
+  if (multiply.checked == true) {
     multiplyInput.style.visibility = 'visible';
   } else {
-    multiplyInput.visibility = 'hidden';
+    multiplyInput.style.visibility = 'hidden';
   };
 });
   document.getElementById('add7').addEventListener('click', function(){
