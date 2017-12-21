@@ -5,16 +5,26 @@
 </head>
 <body>
   <form id="mathSelect"><input id="add" name="select" type="radio" checked>Add 7 to a number<input id="multiply2"name="select" type="radio"> Multiply 2 numbers</form>
-  <div>So, what number do you want to add 7 to?</div>
-  <form><input id="addInput" type="number"><input id="multiplyInput" type="number" style="visibility:hidden"></form>
+  <div>Tell me a number and I will add 7 for you</div>
+  <form><input id="addInput" type="number"><input id="multiplyInput" type="number" style="visibility:hidden">
   <button id="submit">Gimme the answer!</button>
-  <div id="answer"></div>
+  <div id="answer"></div></form>
+  <div>Enter a word to capitalize</div>
+  <form><input id="capitalizeWord" type="text"><button id="capitalizeSubmit">Capitalize it!</button>
+  <div id="capitalizeAnswer"></div></form>
+  <div>Enter a word and I'll tell you the last letter</div>
+  <form><input id="lastLetterInput" type="text"><button id="lastLetterSubmit">Give me the letter!</button>
+  <div id="lastLetterAnswer"></div></form>
   <script>
   var input = document.getElementById('addInput');
   var input2 = document.getElementById('multiplyInput');
   var multiply2 = document.getElementById('multiply2');
   var add = document.getElementById('add');
   var result = document.getElementById('answer');
+  var capitalizeWord = document.getElementById('capitalizeWord');
+  var capitalizeAnswer = document.getElementById('capitalizeAnswer');
+  var lastLetterInput = document.getElementById('lastLetterInput');
+  var lastLetterAnswer = document.getElementById('lastLetterAnswer');
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
@@ -28,13 +38,14 @@
   function lastLetter(str){
     return str.charAt(str.length - 1).toLowerCase();
   }
-  document.getElementById('submit').addEventListener('click', function(){
+  document.getElementById('submit').addEventListener('click', function(e){
     var answer = add7(input.value);
     var answer2 = multiply(input.value, input2.value);
+    e.preventDefault();
     if (input.value.length && add.checked){
     document.getElementById('answer').textContent = 'The answer is ' + answer + '. You really couldn\'t work that out on your own?'}
     else if (input.value.length && input2.value.length && multiply2.checked){
-      document.getElementById('answer').textContent = input.value + ' times ' + input2.value + ' = ' + answer2
+      document.getElementById('answer').textContent = input.value + ' times ' + input2.value + ' is ' + answer2
     }
     else {
       document.getElementById('answer').textContent = "You need to enter a number first."
@@ -51,6 +62,34 @@
   document.getElementById('addInput').addEventListener('focus', function(){
     if (input.value) {
       input.value = ' ';
+    }
+  })
+  document.getElementById('capitalizeSubmit').addEventListener('click', function(e){
+    e.preventDefault();
+if (capitalizeWord.value){
+  capitalizeAnswer.textContent = capitalize(capitalizeWord.value);
+}
+  else {
+    capitalizeAnswer.textContent = 'Please enter a word.'
+  }
+  })
+  document.getElementById('lastLetterSubmit').addEventListener('click', function(e){
+    e.preventDefault();
+if (lastLetterInput.value){
+  lastLetterAnswer.textContent = 'The last letter is ' + lastLetter(lastLetterInput.value);
+}
+  else {
+    lastLetterAnswer.textContent = 'Please enter a word.'
+  }
+  })
+  document.getElementById('capitalizeWord').addEventListener('focus', function(){
+    if (capitalizeWord.value) {
+      capitalizeWord.value = ' ';
+    }
+  })
+  document.getElementById('lastLetterInput').addEventListener('focus', function(){
+    if (lastLetterInput.value) {
+      lastLetterInput.value = ' ';
     }
   })
   </script>
