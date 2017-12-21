@@ -14,12 +14,19 @@
   var input2 = document.getElementById('multiplyInput');
   var multiply2 = document.getElementById('multiply2');
   var add = document.getElementById('add');
+  var result = document.getElementById('answer');
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
   }
   function multiply(x, y){
     return x * y;
+  }
+  function capitalize(str){
+  return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
+  }
+  function lastLetter(str){
+    return str.charAt(str.length - 1).toLowerCase();
   }
   document.getElementById('submit').addEventListener('click', function(){
     var answer = add7(input.value);
@@ -41,15 +48,11 @@
       multiplyInput.style.visibility = 'hidden';
     };
   });
-  var str = "GIRAFFE";
-  function capitalize(str){
-  return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
-  }
-
-  function lastLetter(str){
-    return str.charAt(str.length - 1).toLowerCase();
-  }
-  console.log(multiply(input.value, input2.value))
+  document.getElementById('addInput').addEventListener('focus', function(){
+    if (input.value) {
+      input.value = ' ';
+    }
+  })
   </script>
 </body>
 
