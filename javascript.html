@@ -7,38 +7,39 @@
   <form id="mathSelect"><input id="add" name="select" type="radio" checked>Add 7 to a number<input id="multiply"name="select" type="radio"> Multiply 2 numbers</form>
   <div>So, what number do you want to add 7 to?</div>
   <form><input id="addInput" type="number"><input id="multiplyInput" type="number" style="visibility:hidden"></form>
-  <button id="add7">ADD 7</button>
+  <button id="submit">Gimme the answer!</button>
   <div id="answer"></div>
   <script>
   var input = document.getElementById('addInput');
   var input2 = document.getElementById('multiplyInput');
-  var add = document.getElementById('add');
   var multiply = document.getElementById('multiply');
-
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
   }
-document.getElementById('mathSelect').addEventListener('change', function(){
-  var multiplyInput = document.getElementById('multiplyInput');
-  if (multiply.checked == true) {
-    multiplyInput.style.visibility = 'visible';
-  } else {
-    multiplyInput.style.visibility = 'hidden';
-  };
-});
-  document.getElementById('add7').addEventListener('click', function(){
+  function multiply(x, y){
+    return x * y;
+  }
+  document.getElementById('submit').addEventListener('click', function(){
     var answer = add7(input.value);
+    var answer2 = multiply(input.value, input2.value);
     if (input.value.length){
     document.getElementById('answer').textContent = 'The answer is ' + answer + '. You really couldn\'t work that out on your own?'}
+    else if (input.value.length && input2.value.length){
+      document.getElementById('answer').textContent = input.value + ' times ' + input2.value + ' = ' + answer2
+    }
     else {
       document.getElementById('answer').textContent = "You need to enter a number first."
     };
   });
-
-  function multiply(x, y){
-    return x * y;
-  }
+  document.getElementById('mathSelect').addEventListener('change', function(){
+    var multiplyInput = document.getElementById('multiplyInput');
+    if (multiply.checked) {
+      multiplyInput.style.visibility = 'visible';
+    } else {
+      multiplyInput.style.visibility = 'hidden';
+    };
+  });
   var str = "GIRAFFE";
   function capitalize(str){
   return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
@@ -47,6 +48,7 @@ document.getElementById('mathSelect').addEventListener('change', function(){
   function lastLetter(str){
     return str.charAt(str.length - 1).toLowerCase();
   }
+  console.log(multiply(input.value, input2.value))
   </script>
 </body>
 
