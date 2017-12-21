@@ -13,6 +13,7 @@
   var input = document.getElementById('addInput');
   var input2 = document.getElementById('multiplyInput');
   var multiply2 = document.getElementById('multiply2');
+  var add = document.getElementById('add');
   function add7(x){
     var x = parseInt(x, 10);
     return x + 7;
@@ -23,9 +24,9 @@
   document.getElementById('submit').addEventListener('click', function(){
     var answer = add7(input.value);
     var answer2 = multiply(input.value, input2.value);
-    if (input.value.length){
+    if (input.value.length && add.checked){
     document.getElementById('answer').textContent = 'The answer is ' + answer + '. You really couldn\'t work that out on your own?'}
-    else if (input.value.length && input2.value.length){
+    else if (input.value.length && input2.value.length && multiply2.checked){
       document.getElementById('answer').textContent = input.value + ' times ' + input2.value + ' = ' + answer2
     }
     else {
